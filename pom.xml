@@ -15,7 +15,18 @@
 	<sonar.jacoco.reportPath>${project.build.directory}/coverage-reports/jacoco-ut.exec</sonar.jacoco.reportPath>
 	<jacoco-maven-plugin.version>0.7.4.201502262128</jacoco-maven-plugin.version>
 </properties>
-
+	<distributionManagement>
+        <repository>
+          <id>deployment</id>
+          <name>Internal Releases</name>
+          <url>http://localhost:8082/nexus/content/repositories/samplemvnrel/</url>
+         </repository>	
+	<snapshotRepository>
+          <id>deployment</id>
+          <name>Internal Snapshot Releases</name>
+          <url>http://localhost:8082/nexus/content/repositories/samplemvnsnap/</url>
+         </snapshotRepository>
+	</distributionManagement>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
